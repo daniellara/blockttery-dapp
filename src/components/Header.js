@@ -9,7 +9,7 @@ const Header = (props) => {
         <button>How it works</button>
       </div>
       <div>
-        <p>You can donate real ether here: 0xcDD8AF1f9361E7B3c169f4099A16ff23c7dcf217</p>
+        <p>You can donate real ether here: {props.donationAccount}</p>
       </div>
     </div>
   );
