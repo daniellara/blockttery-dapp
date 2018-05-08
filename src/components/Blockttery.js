@@ -20,7 +20,7 @@ export default class Blockttery extends React.Component {
     waiting: false
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     const drawList = await blocktteryContract.methods.getPlayers().call();
     const drawPrice = await blocktteryContract.methods.price().call() * 0.001;
     const drawSize = await blocktteryContract.methods.size().call();
@@ -47,14 +47,20 @@ export default class Blockttery extends React.Component {
     return (
       <div>
         <Header donationAccount={this.state.donationAccount}/>
-        <ManagerInfo />
-        <LastWinner amountWon={this.state.amountWon} lastWinnerAddress={this.state.lastWinnerAddress}/>
-        <ActualDraw drawList={this.state.drawList} drawSize={this.state.drawSize}/>
-        <EnterDraw
-          drawPrice={this.state.drawPrice}
-          handleEnterDraw={this.handleEnterDraw}
-          waiting={this.state.waiting}
-        />
+        <div className="container app-body">
+          <div className="left-panel">
+            <ActualDraw drawList={this.state.drawList} drawSize={this.state.drawSize}/>
+            <EnterDraw
+              drawPrice={this.state.drawPrice}
+              handleEnterDraw={this.handleEnterDraw}
+              waiting={this.state.waiting}
+            />
+        </div>
+          <div className="right-panel">
+            <ManagerInfo />
+            <LastWinner amountWon={this.state.amountWon} lastWinnerAddress={this.state.lastWinnerAddress}/>
+          </div>
+        </div>
       </div>
     );
   }

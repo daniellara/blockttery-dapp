@@ -1,0 +1,22 @@
+.header {
+  background: grey;
+  color: white;
+  margin-bottom: $m-size;
+  padding: $xs-size 0;
+}
+
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
+}
+
+.header-button {
+  margin: 0 $l-size;
+  align-self: center;
+}
+

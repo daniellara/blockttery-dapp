@@ -2,14 +2,15 @@ import React from 'react';
 
 const Header = (props) => {
   return (
-    <div>
-      <div>
-        <h2>Blockttery</h2>
-        <h4>"Gambling with Ether"</h4>
-        <button>How it works</button>
-      </div>
-      <div>
-        <p>You can donate real ether here: {props.donationAccount}</p>
+    <div className="header">
+      <div className="container header-main">
+        <div className="header-title">
+          <h1>Blockttery</h1>
+          <button className="header-button">How it works</button>
+        </div>
+        <div className="header-donation">
+          <p>You can donate real ether here:<br/> {props.donationAccount}</p>
+        </div>
       </div>
     </div>
   );
