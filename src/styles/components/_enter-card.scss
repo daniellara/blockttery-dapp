@@ -1,0 +1,27 @@
+.enter-card {
+  background: white;
+  border: solid 1px #ddd;
+  border-radius: $xs-size;
+  box-shadow: 1px 1px #ccc;
+  color: #444;
+  font-weight: 400;
+  margin-bottom: $m-size;
+  padding: $s-size $m-size;
+  text-align: center;
+}
+
+.enter-button {
+  background-color: #f0ad4e;
+  background-image: linear-gradient(to bottom,#f0ad4e 0,#eb9316 100%);
+  border-color: #eea236;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  padding: $xs-size;
+}
+
+.enter-button:disabled {
+  opacity: 0.5;
+}

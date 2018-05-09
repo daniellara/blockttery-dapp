@@ -48,17 +48,25 @@ export default class Blockttery extends React.Component {
       <div>
         <Header donationAccount={this.state.donationAccount}/>
         <div className="container app-body">
-          <div className="left-panel">
-            <ActualDraw drawList={this.state.drawList} drawSize={this.state.drawSize}/>
-            <EnterDraw
-              drawPrice={this.state.drawPrice}
-              handleEnterDraw={this.handleEnterDraw}
-              waiting={this.state.waiting}
-            />
+          <div className="panel-parent">
+            <div className="enter-card">
+              <ActualDraw drawList={this.state.drawList} drawSize={this.state.drawSize}/>
+            </div>
+            <div className="enter-card">
+              <EnterDraw
+                drawPrice={this.state.drawPrice}
+                handleEnterDraw={this.handleEnterDraw}
+                waiting={this.state.waiting}
+              />
+            </div>
         </div>
-          <div className="right-panel">
-            <ManagerInfo />
-            <LastWinner amountWon={this.state.amountWon} lastWinnerAddress={this.state.lastWinnerAddress}/>
+          <div className="panel-parent">
+            <div className="enter-card">
+              <ManagerInfo />
+            </div>
+            <div className="enter-card">
+              <LastWinner amountWon={this.state.amountWon} lastWinnerAddress={this.state.lastWinnerAddress}/>
+            </div>
           </div>
         </div>
       </div>

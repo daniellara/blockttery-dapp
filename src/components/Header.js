@@ -6,7 +6,7 @@ const Header = (props) => {
       <div className="container header-main">
         <div className="header-title">
           <h1>Blockttery</h1>
-          <button className="header-button">How it works</button>
+
         </div>
         <div className="header-donation">
           <p>You can donate real ether here:<br/> {props.donationAccount}</p>
@@ -15,5 +15,5 @@ const Header = (props) => {
     </div>
   );
 };
-
+// <button className="header-button">How it works</button>
 export default Header;

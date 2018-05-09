@@ -1,8 +1,8 @@
 .header {
-  background: grey;
-  color: white;
-  margin-bottom: $m-size;
-  padding: $xs-size 0;
+  background: $header;
+  color: #fff;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .header-main {
@@ -18,5 +18,10 @@
 .header-button {
   margin: 0 $l-size;
   align-self: center;
+}
+
+.header-donation {
+  text-align: center;
+  font-weight: bold;
 }
 

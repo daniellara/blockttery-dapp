@@ -15,7 +15,7 @@ export default class ManagerInfo extends React.Component {
 
   render() {
     return (
-      <p>This contract is managed by: <br/>{this.state.manager}</p>
+      <p><b>This contract is managed by:</b> <br/>{this.state.manager}</p>
     );
   }
 }
