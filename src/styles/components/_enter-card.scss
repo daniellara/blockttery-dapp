@@ -25,3 +25,45 @@
 .enter-button:disabled {
   opacity: 0.5;
 }
+
+.ul-title {
+  padding: $xs-size;
+  background: #ddd;
+  border-top-left-radius: $xs-size;
+  border-top-right-radius: $xs-size;
+  border: solid 1px #ccc;
+  margin-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 150px;
+  overflow: auto;
+  border: solid 1px #ccc;
+  border-bottom-left-radius: $xs-size;
+  border-bottom-right-radius: $xs-size;
+  white-space: nowrap;
+}
+
+li {
+  border-top: solid 1px #ccc;
+  text-align: justify;
+  padding: $s-size;
+}
+
+.waiting-message {
+  color: #f0ad4e;
+  font-size: $m-size;
+}
+
+.successful-message {
+  color: #6aaf6a;
+  font-size: $m-size;
+}
+
+.error-message {
+  color: #e50000;
+  font-size: $m-size;
+}

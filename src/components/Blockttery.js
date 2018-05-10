@@ -32,15 +32,24 @@ export default class Blockttery extends React.Component {
 
   handleEnterDraw = async () => {
     const accounts = await web3.eth.getAccounts();
-    this.setState(() => ({ waiting: true }));
+    this.setState(() => ({ waiting: true, enterStatus: '' }));
 
-    await blocktteryContract.methods.enter().send({
-      from: accounts[0],
-      value: web3.utils.toWei(this.state.drawPrice.toString(), 'ether'),
-      gas: '300000'
-    });
+    try {
+      await blocktteryContract.methods.enter().send({
+        from: accounts[0],
+        value: web3.utils.toWei(this.state.drawPrice.toString(), 'ether'),
+        gas: '300000'
+      });
+    } catch (err) {
+      this.setState(() => ({enterStatus: 'error'}));
+    }
+    if (this.state.enterStatus !== 'error') {
+      this.setState(() => ({enterStatus: 'successful'}));
+    }
+    this.setState(() => ({waiting: false}));
+
     const drawList = await blocktteryContract.methods.getPlayers().call();
-    this.setState(() => ({ waiting: false, drawList }));
+    this.setState(() => ({ drawList }));
   }
 
   render() {
@@ -57,6 +66,7 @@ export default class Blockttery extends React.Component {
                 drawPrice={this.state.drawPrice}
                 handleEnterDraw={this.handleEnterDraw}
                 waiting={this.state.waiting}
+                enterStatus={this.state.enterStatus}
               />
             </div>
         </div>
